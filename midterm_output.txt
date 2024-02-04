@@ -1,0 +1,286 @@
+----------------------------------------
+Name: <your_name>
+ID: <your_id>
+filename = <your_filename>
+
+<Certification>
+----------------------------------------
+
+----------------------------------------
+Start of Task 1: Columnar Transposition Testing
+
+Testing get_words:
+len(get_words(1)) = 26
+len(get_words(2)) = 174
+len(get_words(3)) = 872
+len(get_words(4)) = 2980
+len(get_words(5)) = 5794
+len(get_words(6)) = 9168
+len(get_words(7)) = 12467
+len(get_words(8)) = 13311
+len(get_words(9)) = 12211
+len(get_words(10)) = 10041
+len(get_words(None)) = 84095
+
+Testing valid key:
+valid_key() = False
+valid_key(['a', 'b']) = False
+valid_key(a) = False
+valid_key(aa) = False
+valid_key(ABC) = False
+valid_key(a$?a) = False
+valid_key(psut) = False
+valid_key(e-learning) = False
+valid_key(conversations) = True
+
+Testing adjust_key:
+adjust_key(aba) = ab
+adjust_key(conversations) = conversati
+adjust_key(2cents) = cents
+adjust_key(Jordan) = ordan
+adjust_key(smart city) = smartciy
+
+Testing key_order:
+key_order(mark) = [2, 0, 3, 1]
+key_order(smoothy) = [3, 1, 2, 4, 0, 5]
+key_order(smart city) = [5, 3, 0, 4, 6, 1, 2, 7]
+key_order(Jordan) = [3, 4, 1, 0, 2]
+
+Testing default constructor:
+Columnar Transposition Cipher: [key = zone][pad = q]
+
+Testing set_pad and get_pad:
+set_pad(xx) = False, get_pad = q
+set_pad(3) = False, get_pad = q
+set_pad($) = False, get_pad = q
+set_pad(Q) = True, get_pad = Q
+set_pad(x) = True, get_pad = x
+
+Testing set_key, get_key:
+set_key(123) = False, get_key = zone
+set_key(c) = False, get_key = zone
+set_key(Jordan) = False, get_key = zone
+set_key(jordan) = True, get_key = jordan
+set_key(successful) = True, get_key = sucefl
+
+Testing encryption and decryption
+key = rat, pad = r
+plaintext  = ABCDEF
+ciphertext = CFADBE
+plaintext2 = ABCDEF
+
+key = fly, pad = q
+plaintext  = types of insects
+ciphertext = poncq ys iestefst
+plaintext2 = types of insects
+
+key = snake, pad = x
+plaintext  = This is a kind of reptiles
+ciphertext = Tsdp sh a otxs ir lxineexikfix
+plaintext2 = This is a kind of reptiles
+
+Testing cryptanalysis:
+Testing student file:
+ciphertext = <your ciphertext1>
+plaintext  = <your plaintext1>
+key = <your key1>
+
+End of Task 1: Columnar Transposition Testing
+----------------------------------------
+
+----------------------------------------
+Start of Task 2: Mathx Testing
+
+Testing Mathx.valaid_key
+[5, 2, 3, 28]        --> False
+(2, 1, 0)            --> False
+(1, 3.2, 4, 32)      --> False
+(3, 7, -6, 34)       --> False
+(3, 7, 6, 27)        --> False
+(12, 9, 13, 16)      --> False
+(8, 7, 15, 66)       --> False
+(0, 1, 1, 36)        --> True
+(94, 16, 17, 38)     --> True
+
+Testing default constructor:
+Mathx: y = x mod 26
+
+Testing basic methods:
+key = (3, 8, 9, 38)
+Setting Mathx key to (3, 8, 9, 38)
+	set_key success = True
+	get_key = (3, 8, 9, 38)
+	get_base = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkl
+	get_type = Affine
+	Mathx: y = 31x + 34 mod 38
+
+key = (12, 9, 13, 16)
+Setting Mathx key to (12, 9, 13, 16)
+	set_key success = False
+	get_key = (1, 1, 0, 26)
+	get_base = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+	get_type = No_Encipherment
+	Mathx: y = x mod 26
+
+key = (0, 1, 1, 36)
+Setting Mathx key to (0, 1, 1, 36)
+	set_key success = True
+	get_key = (0, 1, 1, 36)
+	get_base = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghij
+	get_type = Affine
+	Mathx: y = 35x + 1 mod 36
+
+key = (94, 16, 17, 40)
+Setting Mathx key to (94, 16, 17, 40)
+	set_key success = True
+	get_key = (14, 16, 17, 40)
+	get_base = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmn
+	get_type = Affine
+	Mathx: y = 7x + 32 mod 40
+
+key = (1, 2, 3, 42)
+Setting Mathx key to (1, 2, 3, 42)
+	set_key success = True
+	get_key = (1, 2, 3, 42)
+	get_base = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnop
+	get_type = Shift
+	Mathx: y = x + 6 mod 42
+
+key = (3, 5, 0, 44)
+Setting Mathx key to (3, 5, 0, 44)
+	set_key success = True
+	get_key = (3, 5, 0, 44)
+	get_base = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqr
+	get_type = Decimation
+	Mathx: y = 31x mod 44
+
+Testing Encryption and Decryptoin
+Mathx: y = 27x mod 46
+plaintext =   Strike in progress
+ciphertext=   aTLsGc sp DLWkLcmm
+plaintext2=   Strike in progress
+
+Mathx: y = 8x mod 44
+plaintext =   DECIMATION CIPHER
+ciphertext=   YgQUIAUUYQ QUgMgE
+plaintext2=   
+
+Mathx: y = x + 6 mod 52
+plaintext =   mission accomplished?
+ciphertext=   soyyout giiusvroynkj?
+plaintext2=   mission accomplished?
+
+Mathx: y = 17x + 22 mod 50
+plaintext =   Mission Failed!
+ciphertext=   aAUUACj HOABgP!
+plaintext2=   Mission Failed!
+
+Mathx: y = x mod 26
+plaintext =   Silly Key
+ciphertext=   Silly Key
+plaintext2=   Silly Key
+
+Mathx: y = 7x + 2 mod 28
+plaintext =   Caesar Cipher
+ciphertext=   QQesQr Qipher
+plaintext2=   
+
+Testing cryptanalysis on student file:
+Testing student file:
+ciphertext = <your ciphertext2>
+plaintext  = <your planitext2>
+key = <your key2>
+
+End of Task 2: Mathx Testing
+----------------------------------------
+
+----------------------------------------
+Start of Task 3: Atberti Testing
+
+Testing Atberti.valaid_key
+['lower', 'p']       --> False
+('lower', 'p', 'k')  --> False
+(15, 'k')            --> False
+('upper', 20.2)      --> False
+('ascii', 'r')       --> False
+('BA', 'mr')         --> False
+('B6', '$')          --> False
+('alpha', 'L')       --> True
+('B6', ' ')          --> True
+
+Testing default constructor:
+Atberti Cipher (('lower', 'z')):
+abcdefghijklmnopqrstuvwxyz
+zyxwvutsrqponmlkjihgfedcba
+
+Testing basic methods:
+set_key(('lower', 'k')) = True
+get_key() = ('lower', 'k')
+out_wheel = abcdefghijklmnopqrstuvwxyz
+in_wheel  = kjihgfedcbazyxwvutsrqponml
+
+set_key(('alpha', 'M')) = True
+get_key() = ('alpha', 'M')
+out_wheel = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+in_wheel  = MLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPON
+
+set_key(('alphanum', '4')) = True
+get_key() = ('alphanum', '4')
+out_wheel = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+in_wheel  = 43210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA98765
+
+set_key(('pascii', 'r')) = True
+get_key() = ('pascii', 'r')
+out_wheel = ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+in_wheel  = rqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA~}|{`_^]\[@?>=<;:/.-,+*)('&%$#"!9876543210zyxwvuts
+
+set_key(('html', 'P')) = False
+get_key() = ('lower', 'z')
+out_wheel = abcdefghijklmnopqrstuvwxyz
+in_wheel  = zyxwvutsrqponmlkjihgfedcba
+
+Testing Encryption and Decryptoin
+Atberti Cipher (('alpha', 'G')):
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+GFEDCBAzyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIH
+plaintext =   Gaza Remains in Our Hearts!
+ciphertext=   AgHg pcUgYTO YT sMP zcgPNO!
+plaintext2=   Gaza Remains in Our Hearts!
+
+Atberti Cipher (('BA', '+')):
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ 
+
++*)('&%$#"!9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+ ~}|{`_^]\[@?>=<;:/.-,
+plaintext =   Alberti + Atbash = Atberti
+ciphertext=   +jtqdbm-A-+btucn-_-+btqdbm
+plaintext2=   Alberti + Atbash = Atberti
+
+Atberti Cipher (('lower', 's')):
+abcdefghijklmnopqrstuvwxyz
+srqponmlkjihgfedcbazyxwvut
+plaintext =   Cryptography to some is an art not science
+ciphertext=   Cbudzembsdlu ze aego ka sf sbz fez aqkofqo
+plaintext2=   Cryptography to some is an art not science
+
+Atberti Cipher (('alphanum', 'R')):
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+RQPONMLKJIHGFEDCBA9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTS
+plaintext =   One must acknowledge with cryptography no amount of violence will ever solve a math problem.
+ciphertext=   Dox phji 1zronfqxyvx ftiu zkdminvk1mud on 1pnhoi nw gtnqxozx ftqq xgxk jnqgx 1 p1iu mkn0qxp.
+plaintext2=   One must acknowledge with cryptography no amount of violence will ever solve a math problem.
+
+cryptanalysis on sample data:
+plaintext  = there are two kinds of cryptography in this world: cryptography that will stop your kid sister from reading your files, and cryptography that will stop major governments from reading your files.
+ciphertext = tfivi mvi tqy cezju yh kvoxtygvmxfo ez tfeu qyvbj: kvoxtygvmxfo tfmt qebb utyx oysv cej ueutiv hvya vimjezg oysv hebiu, mzj kvoxtygvmxfo tfmt qebb utyx amdyv gyrivzaiztu hvya vimjezg oysv hebiu.
+plaintext2 = there are two kinds of cryptography in this world: cryptography that will stop your kid sister from reading your files, and cryptography that will stop major governments from reading your files.
+key = ('lower', 'm')
+
+Testing student file:
+ciphertext = <your ciphertext3>
+plaintext  = <your plaintext3>
+key = <your key3>
+
+End of Task 3: Atberti Testing
+----------------------------------------
+
